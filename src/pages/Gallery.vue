@@ -35,7 +35,7 @@ const getImages = async () => {
     const imageIds = result.data.map((obj) => obj.id);
 
     imageIds.forEach(async (id) => {
-      const url = `https://graph.facebook.com/v13.0/${id}?fields=media_url, timestamp&access_token=${instaData.token}`;
+      const url = `https://graph.facebook.com/v13.0/${id}?fields=media_url,timestamp&access_token=${instaData.token}`;
       const res = await (await fetch(url)).json();
       images.value.push(res);
     });

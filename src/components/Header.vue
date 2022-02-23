@@ -20,12 +20,12 @@
               Профиль
             </router-link>
           </q-btn>
-
+          <!-- 
           <q-btn flat>
             <router-link class="router-link" to="/stories">
               Истории
             </router-link>
-          </q-btn>
+          </q-btn> -->
           <q-btn flat>
             <router-link class="router-link" to="/gallery">
               Галерея
@@ -53,6 +53,7 @@ const signOutOnClick = async () => {
   const auth = getAuth();
   try {
     await signOut(auth);
+    localStorage.clear();
     router.push({ name: 'login' });
   } catch (error) {
     console.log(error);

@@ -1,12 +1,16 @@
 <template>
-  <h4>Вход</h4>
-  <q-form @submit="signIn">
-    <div class="q-gutter-y-md column" style="max-width: 300px">
-      <q-input v-model="email" label="Email" dense type="email" />
-      <q-input v-model="password" label="Пароль" dense type="password" />
-      <q-btn color="primary" type="submit">Войти</q-btn>
+  <div class="row justify-center">
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      <h4>Вход</h4>
+      <q-form @submit="signIn">
+        <div class="q-gutter-y-md column">
+          <q-input v-model="email" label="Email" dense type="email" />
+          <q-input v-model="password" label="Пароль" dense type="password" />
+          <q-btn color="primary" type="submit">Войти</q-btn>
+        </div>
+      </q-form>
     </div>
-  </q-form>
+  </div>
 </template>
 <script setup>
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
